@@ -14995,18 +14995,19 @@ Source: http://www.lumberg.com/Produkte/PDFs/1501_03.pdf</description>
 </net>
 <net name="N$15" class="0">
 <segment>
+<wire x1="99.06" y1="12.7" x2="114.3" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="12.7" x2="114.3" y2="10.16" width="0.1524" layer="91"/>
 <pinref part="X1" gate="G$1" pin="3"/>
-<wire x1="134.62" y1="10.16" x2="106.68" y2="10.16" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="10.16" x2="106.68" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="R1IN"/>
-<wire x1="106.68" y1="7.62" x2="101.6" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="10.16" x2="134.62" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="T1OUT"/>
 <pinref part="X1" gate="G$1" pin="2"/>
-<wire x1="101.6" y1="12.7" x2="134.62" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="12.7" x2="116.84" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="12.7" x2="116.84" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="R1IN"/>
+<wire x1="116.84" y1="7.62" x2="101.6" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
