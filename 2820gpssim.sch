@@ -14677,7 +14677,7 @@ Source: http://www.lumberg.com/Produkte/PDFs/1501_03.pdf</description>
 <part name="R1" library="rcl" deviceset="R-EU_" device="0204/7" value="150"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="C7" library="resistor" deviceset="CPOL-EU" device="E2.5-5" value="10µF"/>
-<part name="R2" library="rcl" deviceset="R-EU_" device="0204/7" value="4k7"/>
+<part name="R2" library="rcl" deviceset="R-EU_" device="0204/7" value="10k"/>
 <part name="C8" library="resistor" deviceset="C-EU" device="025-025X050" value="100nF"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="LED2" library="led" deviceset="LED" device="3MM" value="red"/>
