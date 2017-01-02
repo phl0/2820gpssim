@@ -16,6 +16,7 @@
 
 void uart_puts(const char *s);
 void EEPROM_write(unsigned int ucAddress, unsigned char ucData);
+unsigned char EEPROM_read(unsigned int ucAddress);
 
 int main (void) { 
    
@@ -67,4 +68,16 @@ void EEPROM_write(unsigned int ucAddress, unsigned char ucData) {
    EECR |= (1<<EEMPE);
    /* Start eeprom write by setting EEPE */
    EECR |= (1<<EEPE);
+}
+
+unsigned char EEPROM_read(unsigned int ucAddress) {
+   /* Wait for completion of previous write */
+   while(EECR & (1<<EEPE));
+   /* Set up address register */
+   EEAR = ucAddress;
+   /* 
+    * Start eeprom read by writing EERE */
+   EECR |= (1<<EERE);
+   /* Return data from data register */
+   return EEDR;
 }
