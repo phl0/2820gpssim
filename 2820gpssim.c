@@ -20,7 +20,11 @@ unsigned char EEPROM_read(unsigned int ucAddress);
 
 int main (void) { 
    
-   EEPROM_write(0x0A,0x11);
+   EEPROM_write(0x00,0x11);
+   EEPROM_write(0x01,0x11);
+   EEPROM_write(0x02,0x11);
+   EEPROM_write(0x03,0x11);
+   EEPROM_write(0x04,0x11);
 
    char APRSstring[50];
    strcpy(APRSstring, "$$CRC843B,DF2ET>API282,DSTAR*:!5129.64N/00714.43Ey/Florian N18 Bochum\r");
