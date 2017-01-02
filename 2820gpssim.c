@@ -14,15 +14,12 @@
 #include <util/delay.h>
 #include <string.h>
 
-void uart_puts(const char *s) {
-   while (*s) {
-      while (!(UCSRA & (1<<UDRE)));
-      UDR = *s;
-      s++;
-   }
-}
+void uart_puts(const char *s);
+void eepromWrite(unsigned short, unsigned char);
 
 int main (void) { 
+   
+   //eepromWrite(0x0A,0x11);
 
    char APRSstring[50];
    strcpy(APRSstring, "$$CRC843B,DF2ET>API282,DSTAR*:!5129.64N/00714.43Ey/Florian N18 Bochum\r");
@@ -43,5 +40,31 @@ int main (void) {
       _delay_ms(3000);
    }
    return 0;
+
+}
+
+void uart_puts(const char *s) {
+   while (*s) {
+      while (!(UCSRA & (1<<UDRE)));
+      UDR = *s;
+      s++;
+   }
+}
+
+void eepromWrite(unsigned short address, unsigned char data) {
+   while(EECR & (1<<EEPE));
+
+   EECR = (0<<EEPM1) | (0<<EEPM0);
+
+   if(address<128) {
+      EEAR = address;
+   } else {
+      EEAR = 127;
+   }
+
+   EEDR = data;
+
+   EECR |= (1<<EEMPE);
+   EECR |= (1<<EEPE);
 
 }
