@@ -15,11 +15,11 @@
 #include <string.h>
 
 void uart_puts(const char *s);
-void eepromWrite(unsigned short, unsigned char);
+void EEPROM_write(unsigned int ucAddress, unsigned char ucData);
 
 int main (void) { 
    
-   //eepromWrite(0x0A,0x11);
+   EEPROM_write(0x0A,0x11);
 
    char APRSstring[50];
    strcpy(APRSstring, "$$CRC843B,DF2ET>API282,DSTAR*:!5129.64N/00714.43Ey/Florian N18 Bochum\r");
@@ -51,20 +51,20 @@ void uart_puts(const char *s) {
    }
 }
 
-void eepromWrite(unsigned short address, unsigned char data) {
+void EEPROM_write(unsigned int ucAddress, unsigned char ucData) {
+   /* 
+    * Wait for completion of previous write
+    *  */
    while(EECR & (1<<EEPE));
-
-   EECR = (0<<EEPM1) | (0<<EEPM0);
-
-   if(address<128) {
-      EEAR = address;
-   } else {
-      EEAR = 127;
-   }
-
-   EEDR = data;
-
+   /* 
+    * Set Programming mode */
+   EECR = (0<<EEPM1)|(0<<EEPM0);
+   /* Set up address and data registers */
+   EEAR = ucAddress;
+   EEDR = ucData;
+   /* 
+    * Write logical one to EEMPE */
    EECR |= (1<<EEMPE);
+   /* Start eeprom write by setting EEPE */
    EECR |= (1<<EEPE);
-
 }
