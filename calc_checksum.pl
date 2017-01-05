@@ -1,6 +1,31 @@
 #!/usr/bin/perl -w
 
-my $string = 'DF2ET>API282,DSTAR*:!5129.64N/00714.43Ey/Florian N18 Bochum';
+print "Callsign: ";
+my $callsign = <STDIN>;
+chomp($callsign);
+
+print "Latitude: ";
+my $lat = <STDIN>;
+chomp($lat);
+
+print "Symbol table selector: ";
+my $table = <STDIN>;
+chomp($table);
+
+print "Longitude: ";
+my $lon = <STDIN>;
+chomp($lon);
+
+print "Symbol: ";
+my $symbol = <STDIN>;
+chomp($symbol);
+
+print "Comment: ";
+my $comment = <STDIN>;
+chomp($comment);
+
+my $string = "$callsign>API282,DSTAR*:!$lat$table$lon$symbol/$comment";
+
 # Append carriage return at the end
 $string = $string."\r";
 
@@ -45,6 +70,6 @@ foreach my $char (split "", $string) {
    $crc = ($crc >> 8) ^ $crc_ccitt_table[(($crc ^ unpack "C*", $char) & 0xff)]
 }
 $crc = $crc ^ 0xffff;
-printf ("0x%04X\n", $crc);
+printf ("\$\$CRC%04X,%s\n", $crc, $string);
 
 exit 0;
