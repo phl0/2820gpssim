@@ -14,18 +14,12 @@
 #include <util/delay.h>
 #include <string.h>
 
-void uart_puts(const char *s) {
-   while (*s) {
-      while (!(UCSRA & (1<<UDRE)));
-      UDR = *s;
-      s++;
-   }
-}
+void uart_puts(const char *s);
 
-int main (void) { 
+int main (void) {
 
-   char APRSstring[50];
-   strcpy(APRSstring, "$$CRC843B,DF2ET>API282,DSTAR*:!5129.64N/00714.43Ey/Florian N18 Bochum\r");
+   char APRSstring[49];
+   strcpy(APRSstring, "$$CRCC626,DF2ET>API282,DSTAR*:!5129.64NO00714.43Ey/Florian QRV on D-Star\r");
 
    UBRRH = (uint8_t)(MYUBBR >> 8);
    UBRRL = (uint8_t)(MYUBBR);
@@ -44,4 +38,12 @@ int main (void) {
    }
    return 0;
 
+}
+
+void uart_puts(const char *s) {
+   while (*s) {
+      while (!(UCSRA & (1<<UDRE)));
+      UDR = *s;
+      s++;
+   }
 }
