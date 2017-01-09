@@ -14810,7 +14810,7 @@ DIN female/male, etc.&lt;p&gt;
 <part name="R2" library="rcl" deviceset="R-EU_" device="0204/7" value="10k"/>
 <part name="C8" library="resistor" deviceset="C-EU" device="025-025X050" value="100nF"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="LED2" library="led" deviceset="LED" device="3MM" value="red"/>
+<part name="LED2" library="led" deviceset="LED" device="3MM" value="yellow"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="SV1" library="con-ml" deviceset="ML10" device="" value="ISP"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
@@ -14819,7 +14819,7 @@ DIN female/male, etc.&lt;p&gt;
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="X1" library="con-lumberg" deviceset="1501_03" device=""/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
-<part name="X2" library="con-yamaichi" deviceset="MD06SS" device=""/>
+<part name="X2" library="con-yamaichi" deviceset="MD06SS" device="" value="ISP2"/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
