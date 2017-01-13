@@ -14856,8 +14856,8 @@ DIN female/male, etc.&lt;p&gt;
 <instance part="GND10" gate="1" x="78.74" y="35.56"/>
 <instance part="IC1" gate="P" x="86.36" y="-10.16" rot="R270"/>
 <instance part="GND11" gate="1" x="71.12" y="-17.78"/>
-<instance part="C9" gate="G$1" x="101.6" y="-10.16" rot="R90"/>
-<instance part="GND12" gate="1" x="114.3" y="-17.78"/>
+<instance part="C9" gate="G$1" x="116.84" y="-10.16" rot="R90"/>
+<instance part="GND12" gate="1" x="124.46" y="-17.78"/>
 <instance part="X1" gate="G$1" x="139.7" y="0"/>
 <instance part="GND13" gate="1" x="132.08" y="-17.78"/>
 <instance part="X2" gate="G$1" x="134.62" y="71.12"/>
@@ -14973,8 +14973,8 @@ DIN female/male, etc.&lt;p&gt;
 <segment>
 <pinref part="C9" gate="G$1" pin="-"/>
 <pinref part="GND12" gate="1" pin="GND"/>
-<wire x1="106.68" y1="-10.16" x2="114.3" y2="-10.16" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="-10.16" x2="114.3" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="-10.16" x2="124.46" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="-10.16" x2="124.46" y2="-15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="+"/>
@@ -15118,16 +15118,21 @@ DIN female/male, etc.&lt;p&gt;
 <junction x="78.74" y="66.04"/>
 <wire x1="116.84" y1="22.86" x2="124.46" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="22.86" x2="124.46" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="124.46" y1="-2.54" x2="101.6" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="116.84" y="22.86"/>
 <pinref part="X2" gate="G$1" pin="3"/>
 <wire x1="124.46" y1="73.66" x2="111.76" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="73.66" x2="111.76" y2="66.04" width="0.1524" layer="91"/>
 <junction x="111.76" y="66.04"/>
-<pinref part="IC1" gate="G$1" pin="R2IN"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="-20.32" y1="63.5" x2="-20.32" y2="66.04" width="0.1524" layer="91"/>
 <junction x="-20.32" y="66.04"/>
+<pinref part="IC1" gate="P" pin="VCC"/>
+<pinref part="C9" gate="G$1" pin="+"/>
+<wire x1="93.98" y1="-10.16" x2="106.68" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-10.16" x2="114.3" y2="-10.16" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="-2.54" x2="106.68" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="-2.54" x2="106.68" y2="-10.16" width="0.1524" layer="91"/>
+<junction x="106.68" y="-10.16"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -15146,13 +15151,6 @@ DIN female/male, etc.&lt;p&gt;
 <wire x1="116.84" y1="5.08" x2="116.84" y2="0" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="R1IN"/>
 <wire x1="116.84" y1="0" x2="101.6" y2="0" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$12" class="0">
-<segment>
-<pinref part="IC1" gate="P" pin="VCC"/>
-<pinref part="C9" gate="G$1" pin="+"/>
-<wire x1="93.98" y1="-10.16" x2="99.06" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$20" class="0">
