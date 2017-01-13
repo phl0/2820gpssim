@@ -4,6 +4,8 @@ MCU_TARGET     = attiny2313
 PROGRAMMER     = usbasp
 AVRDUDE_TARGET = t2313
 #F_CPU          = 20000000
+HFUSE          = 0xdf
+LFUSE          = 0xe4
 
 OPTIMIZE       = -Os
 
@@ -35,3 +37,7 @@ program:
 	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) \
 	 -U flash:w:$(PRG).hex
 
+fuses:
+	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) \
+		-U hfuse:w:$(HFUSE):m \
+		-U lfuse:w:$(LFUSE):m
