@@ -18,7 +18,7 @@ void uart_puts(const char *s);
 
 int main (void) {
 
-   static const char APRSstring[] = "$$CRCC626,DF2ET>API282,DSTAR*:!5129.64NO00714.43Ey/Florian QRV on D-Star\r";
+   static const char APRSstring[] = "$$CRCDB34,DF2ET>API282,DSTAR*:!5129.64NO00714.43Ey000/000/A=000393Florian QRV on D-Star\r";
 
    UBRRH = (uint8_t)(MYUBBR >> 8);
    UBRRL = (uint8_t)(MYUBBR);

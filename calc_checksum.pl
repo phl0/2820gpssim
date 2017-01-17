@@ -20,11 +20,17 @@ print "Symbol: ";
 my $symbol = <STDIN>;
 chomp($symbol);
 
+print "Height in m above sea level ";
+my $height = <STDIN>;
+chomp($height);
+$height = $height * 3.28084;
+$height = sprintf("%06d", $height);
+
 print "Comment: ";
 my $comment = <STDIN>;
 chomp($comment);
 
-my $string = "$callsign>API282,DSTAR*:!$lat$table$lon$symbol/$comment";
+my $string = "${callsign}>API282,DSTAR*:!${lat}${table}${lon}${symbol}000/000/A=${height}${comment}";
 
 # Append carriage return at the end
 $string = $string."\r";
