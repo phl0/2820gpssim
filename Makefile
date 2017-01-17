@@ -1,7 +1,7 @@
 PRG            = 2820gpssim
 OBJ            = 2820gpssim.o
 MCU_TARGET     = attiny2313
-PROGRAMMER     = usbasp
+PROGRAMMER     = usbasp        # or stk500 etc.
 AVRDUDE_TARGET = t2313
 PORT           = /dev/ttyUSB0
 #F_CPU          = 20000000
