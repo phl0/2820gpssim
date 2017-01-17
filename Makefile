@@ -3,6 +3,7 @@ OBJ            = 2820gpssim.o
 MCU_TARGET     = attiny2313
 PROGRAMMER     = usbasp
 AVRDUDE_TARGET = t2313
+PORT           = /dev/ttyUSB0
 #F_CPU          = 20000000
 HFUSE          = 0xdf
 LFUSE          = 0xe4
@@ -34,10 +35,10 @@ clean:
 	$(RM) *.o *.map *.elf *.hex
 
 program:
-	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) \
+	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) -P $(PORT) \
 	 -U flash:w:$(PRG).hex
 
 fuses:
-	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) \
+	avrdude -p $(AVRDUDE_TARGET) -c $(PROGRAMMER) -P $(PORT) \
 		-U hfuse:w:$(HFUSE):m \
 		-U lfuse:w:$(LFUSE):m
